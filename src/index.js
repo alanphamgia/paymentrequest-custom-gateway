@@ -12,10 +12,7 @@ if (window.PaymentRequest) {
   //   bindBuyButton()
   // })
 
-    fetchPaymentSession();
-    createPaymentRequest();
-    renderItems();
-    bindBuyButton();
+
 
   // Get the payment session from Snipcart
   const fetchPaymentSession = async () => {
@@ -205,5 +202,10 @@ if (window.PaymentRequest) {
     document.querySelector('#compatibility').classList.remove('hidden')
     document.querySelector('#loader').classList.add('hidden')
   })
+
+  await fetchPaymentSession();
+  createPaymentRequest();
+  renderItems();
+  bindBuyButton();
 
 }
