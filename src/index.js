@@ -17,7 +17,7 @@ if (window.PaymentRequest) {
     const publicToken = new URLSearchParams(window.location.search).get('publicToken')
     try {
       const response = await axios.get(`
-      https://blissful-bose-c44299.netlify.app/.netlify/functions/payment-session?publicToken=${publicToken}`)
+      https://payment.snipcart.com/api/public/custom-payment-gateway/payment-session?publicToken=${publicToken}`)
       paymentSession = response.data
       document.querySelector('#loader').classList.add('hidden')
       document.querySelector('#content').classList.remove('hidden')
