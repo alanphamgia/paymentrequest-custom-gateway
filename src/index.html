@@ -14,10 +14,13 @@
 <script>
     function getData() {
         var q = window.location.href;
-        paymentSessionId = q.queryStringParameters.paymentSessionId;
-        transactionId =  paymentId;
+        console.log(q);
+        paymentSessionId = "" ;
+        //q.queryStringParameters.paymentSessionId;
+        transactionId =  "";
+        //paymentId;
         console.log(event);
-        confirm();
+        // confirm();
     }
 
    async function confirm() {
