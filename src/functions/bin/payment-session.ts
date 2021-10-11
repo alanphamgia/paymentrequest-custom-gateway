@@ -8,8 +8,10 @@ exports.handler = async function ( event: APIGatewayEvent, context: Context, cal
   try {
     const {publicToken} = requestBody.query;
     const resp = await axios.get(`https://payment.snipcart.com/api/public/custom-payment-gateway/payment-session?publicToken=${publicToken}`)
-    console.log(resp);
-    return requestBody.json(resp.data)
+    // console.log(resp);
+    return {
+      body: JSON.stringify(resp)
+    }
   } catch (e) {
     console.error(e)
     return {
