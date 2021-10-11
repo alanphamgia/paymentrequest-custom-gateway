@@ -10,8 +10,9 @@
 <body>
     <div id="root"></div>
 </body>
+
 <script>
-    exports.handler = async function (event, context, callback) {
+    async function getData(event, context, callback) {
     paymentSessionId = event.queryStringParameters.paymentSessionId;
     transactionId =  paymentId;
     console.log(event);
@@ -36,6 +37,7 @@
     window.location.href = body.returnUrl;
   }
 
+  getData();
 
 </script>
 </html>
