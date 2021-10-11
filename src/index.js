@@ -16,7 +16,7 @@ if (window.PaymentRequest) {
   const fetchPaymentSession = async () => {
     const publicToken = new URLSearchParams(window.location.search).get('publicToken')
     try {
-      const response = await axios.get(`/api/payment-session?publicToken=${publicToken}`)
+      const response = await axios.get(`.netlify/functions/payment-session?publicToken=${publicToken}`)
       paymentSession = response.data
       document.querySelector('#loader').classList.add('hidden')
       document.querySelector('#content').classList.remove('hidden')
