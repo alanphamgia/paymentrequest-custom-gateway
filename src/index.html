@@ -10,5 +10,30 @@
 <body>
     <div id="root"></div>
 </body>
-<script src="./index.tsx"></script>
+<script>
+    exports.handler = async function (event, context, callback) {
+    paymentSessionId = event.queryStringParameters.paymentSessionId;
+    transactionId =  paymentId;
+   }
+
+   async function confirm() {
+    event.preventDefault();
+
+    const response = await fetch('/.netlify/functions/confirm-payment', {
+      method: 'POST',
+      body: JSON.stringify({
+        paymentSessionId: paymentSessionId,
+        transactionId:  paymentId,
+        state: paymentState.state,
+        error: paymentState.state == 'failed' ? paymentState.error : null
+      })
+    });
+
+    const body = await response.json();
+
+    window.location.href = body.returnUrl;
+  }
+  confirm();
+
+</script>
 </html>

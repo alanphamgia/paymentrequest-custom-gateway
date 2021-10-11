@@ -58,7 +58,7 @@ async function generateURl(bankcode,request)
   var tmnCode = process.env.vnp_TmnCode;
   var secretKey = process.env.vnp_HashSecret;
   var vnpUrl = process.env.vnp_Url;
-  var returnUrl = 'https://blissful-bose-c44299.netlify.app/confirm-payment.html';
+  var returnUrl = 'https://blissful-bose-c44299.netlify.app/index.html';
   //var vnp_IpnUrl = 'https://secure-whiteplan.netlify.app/.netlify/functions/confirm-payment';
   //process.env.SITE_URL + '#/order/' + request.invoice.targetId;
   console.log("returnUrl" + returnUrl);
