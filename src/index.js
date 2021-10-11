@@ -203,7 +203,12 @@ if (window.PaymentRequest) {
     document.querySelector('#loader').classList.add('hidden')
   })
 
-  await fetchPaymentSession();
+  (async() => {
+
+    await fetchPaymentSession();
+
+  })()
+
   createPaymentRequest();
   renderItems();
   bindBuyButton();
