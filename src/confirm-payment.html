@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WHITEPLAN</title>
+    <link rel="stylesheet" href="./index.scss">
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+   exports.handler = async function (event, context, callback) {
+    paymentSessionId = event.queryStringParameters.paymentSessionId;
+    transactionId =  paymentId;
+   }
+
+   async function confirm() {
+    event.preventDefault();
+
+    const response = await fetch('/.netlify/functions/confirm-payment', {
+      method: 'POST',
+      body: JSON.stringify({
+        paymentSessionId: paymentSessionId,
+        transactionId:  paymentId,
+        state: paymentState.state,
+        error: paymentState.state == 'failed' ? paymentState.error : null
+      })
+    });
+
+    const body = await response.json();
+
+    window.location.href = body.returnUrl;
+  }
+  confirm();
+</script>
+</html>

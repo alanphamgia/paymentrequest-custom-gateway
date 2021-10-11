@@ -2,9 +2,9 @@ import { Context, Callback, APIGatewayEvent } from "aws-lambda";
 import fetch from 'node-fetch';
 import uuid from 'uuid';
 
-if (!process.env.PRODUCTION) {
-  process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // For local development
-}
+// if (!process.env.PRODUCTION) {
+//   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // For local development
+// }
 
 exports.handler = async function (
   event: APIGatewayEvent,
