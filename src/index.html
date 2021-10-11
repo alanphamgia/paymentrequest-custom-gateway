@@ -37,8 +37,7 @@
       body: JSON.stringify({
         paymentSessionId: paymentSessionId,
         transactionId:  transactionId,
-        state: paymentState.state,
-        error: paymentState.state == 'failed' ? paymentState.error : null
+        state: "processed",
       })
     });
     console.log(JSON.stringify(response));
