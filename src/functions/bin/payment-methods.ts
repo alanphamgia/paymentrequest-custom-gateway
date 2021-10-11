@@ -9,9 +9,9 @@ interface SnipcartPaymentMethod {
   iconUrl?: string;
 }
 
-if (!process.env.PRODUCTION) {
-  process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // For local development
-}
+// if (!process.env.PRODUCTION) {
+//   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // For local development
+// }
 
 exports.handler = async function (event: APIGatewayEvent, context: Context, callback: Callback) {
   // Get request's body
