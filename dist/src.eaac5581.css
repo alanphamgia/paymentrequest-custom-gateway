@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli:600,700,800&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Muli", serif;
+  font-size: 15px;
+  font-weight: 600; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafcfc;
+  color: #2d4b4b; }
+
+h1, h2 {
+  margin: 0;
+  padding: 0; }
+
+.app {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .app__title {
+    font-size: 45px;
+    font-family: 'Merriweather', serif;
+    color: #2d4b4b;
+    margin-bottom: 5px; }
+  .app__subtitle {
+    font-size: 15px;
+    color: #bad6d6;
+    margin-bottom: 20px; }
+  .app__notice {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px #f4f8f8;
+    background-color: white;
+    border: 1px solid #eaf2f2;
+    margin-left: 15px;
+    margin-right: 15px; }
+  .app__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+    margin-top: auto; }
+  .app__footer {
+    padding: 15px;
+    background-color: #f0f2f2;
+    width: 100%; }
+
+.form {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px #f4f8f8;
+  background-color: white;
+  border: 1px solid #eaf2f2;
+  margin-left: 15px;
+  margin-right: 15px; }
+  .form__summary {
+    margin-bottom: 15px; }
+  .form__container {
+    max-width: 300px;
+    display: grid;
+    grid-template-areas: "number number" "expiry cvv" "state state" "state-descriptor-code state-descriptor-msg" "button button";
+    grid-gap: 15px; }
+  .form__title {
+    font-size: 45px;
+    font-family: 'Merriweather', serif;
+    color: #2d4b4b;
+    margin-bottom: 5px; }
+  .form__subtitle {
+    font-size: 15px;
+    color: #bad6d6;
+    margin-bottom: 20px; }
+  .form__input {
+    transition: box-shadow 0.2s, border 0.2s;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 3px;
+    border: 1px solid #eaf2f2;
+    font-weight: 600; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0px 0px 0px 4px rgba(66, 155, 252, 0.2);
+      border: 1px solid #429bfc; }
+    .form__input--number {
+      grid-area: number; }
+    .form__input--expiry {
+      grid-area: expiry; }
+    .form__input--cvv {
+      grid-area: cvv; }
+    .form__input--state {
+      grid-area: state; }
+    .form__input--state-descriptor-code {
+      grid-area: state-descriptor-code; }
+    .form__input--state-descriptor-msg {
+      grid-area: state-descriptor-msg; }
+  .form__row {
+    margin-bottom: 10px;
+    grid-column-gap: 15px; }
+  .form__button {
+    all: unset;
+    grid-area: button;
+    font-weight: 700;
+    color: white;
+    background-color: #429bfc;
+    border: 1px solid #3393fc;
+    text-shadow: 2px 2px 5px #3393fc;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 12.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s; }
+    .form__button:hover, .form__button:focus {
+      background-color: #298efc;
+      transform: translateY(-1px);
+      box-shadow: 0px 3px 5px rgba(3, 79, 162, 0.1); }
+
+.summary__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px; }
+  .summary__item--bold {
+    font-weight: 800; }
+
+.link {
+  color: #406b6b;
+  text-decoration: none;
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center; }
+  .link svg {
+    height: 16px;
+    margin-right: 10px; }
+    .link svg path {
+      fill: #406b6b; }
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #eaf2f2; }
