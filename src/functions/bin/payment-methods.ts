@@ -31,7 +31,7 @@ exports.handler = async function (event: APIGatewayEvent, context: Context, call
     [{
       id: 'local-bank',
       name: 'Thanh Toán Ngân Hàng Nội Địa',
-      checkoutUrl: localbankURLLink,
+      checkoutUrl: 'https://blissful-bose-c44299.netlify.app/',
     },
     {
       id: 'international-bank',
