@@ -14,11 +14,13 @@
     exports.handler = async function (event, context, callback) {
     paymentSessionId = event.queryStringParameters.paymentSessionId;
     transactionId =  paymentId;
+    console.log(event);
+    confirm();
    }
 
    async function confirm() {
     event.preventDefault();
-
+    console.log(running);
     const response = await fetch('/.netlify/functions/confirm-payment', {
       method: 'POST',
       body: JSON.stringify({
@@ -28,12 +30,12 @@
         error: paymentState.state == 'failed' ? paymentState.error : null
       })
     });
-
+    console.log(JSON.stringify(response));
     const body = await response.json();
 
     window.location.href = body.returnUrl;
   }
-  confirm();
+
 
 </script>
 </html>
