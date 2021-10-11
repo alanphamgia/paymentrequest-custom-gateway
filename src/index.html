@@ -40,8 +40,8 @@
         state: "processed",
       })
     });
-    console.log(JSON.stringify(response));
-    const body = await response.json();
+    console.log(response);
+    // const body = await response.json();
 
     window.location.href = body.returnUrl;
   }
