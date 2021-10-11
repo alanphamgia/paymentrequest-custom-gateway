@@ -5,13 +5,17 @@ if (window.PaymentRequest) {
   let paymentSession
   let currencyFormatter
 
-  fetchPaymentSession()
-  createPaymentRequest()
-  renderItems()
-  bindBuyButton()
   // document.addEventListener("DOMContentLoaded", async () => {
-
+  //   await fetchPaymentSession()
+  //   createPaymentRequest()
+  //   renderItems()
+  //   bindBuyButton()
   // })
+
+  await fetchPaymentSession()
+    createPaymentRequest()
+    renderItems()
+    bindBuyButton()
 
   // Get the payment session from Snipcart
   const fetchPaymentSession = async () => {
