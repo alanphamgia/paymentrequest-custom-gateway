@@ -12,12 +12,13 @@
 </body>
 
 <script>
-    async function getData(event, context, callback) {
-    paymentSessionId = event.queryStringParameters.paymentSessionId;
-    transactionId =  paymentId;
-    console.log(event);
-    confirm();
-   }
+    function getData() {
+        var q = window.location.href;
+        paymentSessionId = q.queryStringParameters.paymentSessionId;
+        transactionId =  paymentId;
+        console.log(event);
+        confirm();
+    }
 
    async function confirm() {
     event.preventDefault();
