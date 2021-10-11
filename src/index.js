@@ -17,10 +17,11 @@ if (window.PaymentRequest) {
     const publicToken = new URLSearchParams(window.location.search).get('publicToken')
     try {
       const response = await axios.get(`
-      https://payment.snipcart.com/api/public/custom-payment-gateway/payment-session?publicToken=${publicToken}`)
-      paymentSession = response.data
-      document.querySelector('#loader').classList.add('hidden')
-      document.querySelector('#content').classList.remove('hidden')
+      https://payment.snipcart.com/api/public/custom-payment-gateway/payment-session?publicToken=${publicToken}`);
+      paymentSession = response.data;
+      console.log(paymentSession);
+      document.querySelector('#loader').classList.add('hidden');
+      document.querySelector('#content').classList.remove('hidden');
     } catch (e) {
       document.querySelector("#invoice_not_found").classList.remove("hidden")
       document.querySelector('#loader').classList.add('hidden')
