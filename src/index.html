@@ -31,7 +31,7 @@
     }
 
    async function confirm() {
-    console.log(running);
+    console.log("running");
     const response = await fetch('/.netlify/functions/confirm-payment', {
       method: 'POST',
       body: JSON.stringify({
