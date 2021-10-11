@@ -30,9 +30,22 @@
         confirm();
     }
 
+    //     // Payment completed callback
+    // const handlePayment = async (paymentRes) => {
+    //     paymentRes.complete('success')
+    //     try {
+    //     const res = await axios.post(`/api/confirm-payment?sessionId=${paymentSession.id}`, paymentRes)
+    //     window.location.href = res.data.returnUrl
+    //     } catch (e) {
+    //     console.error(e)
+    //     }
+
+    // }
+
+
    async function confirm() {
     console.log("running");
-    const response = await fetch('/.netlify/functions/confirm-payment', {
+    const response = await fetch('https://blissful-bose-c44299.netlify.app/.netlify/functions/confirm-payment', {
       method: 'POST',
       body: JSON.stringify({
         paymentSessionId: paymentSessionId,
@@ -41,9 +54,9 @@
       })
     });
     console.log(response);
-    // const body = await response.json();
+    const body = await response.json();
 
-    window.location.href = 'https://whiteplan.webflow.io/#/order/'+ paymentSessionId;
+    window.location.href = body.returnUrl;
   }
 
   getData();
