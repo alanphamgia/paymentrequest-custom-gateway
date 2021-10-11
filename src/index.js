@@ -15,7 +15,7 @@ if (window.PaymentRequest) {
 
 
   // Get the payment session from Snipcart
-  const fetchPaymentSession = async () => {
+  async function fetchPaymentSession() {
     const publicToken = new URLSearchParams(window.location.search).get('publicToken')
     try {
       const response = await axios.get(`
@@ -32,7 +32,7 @@ if (window.PaymentRequest) {
   }
 
   // Create the payment request (Using the Payment Request API)
-  const createPaymentRequest = () => {
+  async function createPaymentRequest(){
     const currency = paymentSession.invoice.currency
 
     const googlePaymentDataRequest = {
@@ -101,7 +101,7 @@ if (window.PaymentRequest) {
   }
 
   // Add the buy button Event Listener
-  const bindBuyButton = () => {
+  function bindBuyButton(){
     paymentRequest.canMakePayment()
       .then(function (result) {
         if (result) {
@@ -115,7 +115,7 @@ if (window.PaymentRequest) {
   }
 
   // Add the event listener on the Buy button
-  const onBuyClicked = async () => {
+  async function onBuyClicked() {
     document.querySelector('#button_loader').classList.remove('hidden')
     const canMakePayment = await paymentRequest.canMakePayment()
     if (!canMakePayment) {
@@ -133,7 +133,7 @@ if (window.PaymentRequest) {
   }
 
   // Payment completed callback
-  const handlePayment = async (paymentRes) => {
+  async function handlePayment(paymentRes) {
     paymentRes.complete('success')
     try {
       const res = await axios.post(`/api/confirm-payment?sessionId=${paymentSession.id}`, paymentRes)
@@ -145,7 +145,7 @@ if (window.PaymentRequest) {
   }
 
   // Display order items in the checkout
-  const renderItems = () => {
+  async function renderItems() {
     const tbody = document.querySelector('tbody')
     paymentSession.invoice.items.forEach(i => {
       const isItem = i.type !== 'Discount' && i.type !== 'Tax' && i.type !== 'Shipping'
@@ -185,7 +185,7 @@ if (window.PaymentRequest) {
     tfoot.appendChild(row)
   }
 
-  const formatCurrency = (amout) => {
+  async function formatCurrency(amout){
     if (currencyFormatter == null) {
       let lang = 'en-US'
       if (navigator.language != null) {
