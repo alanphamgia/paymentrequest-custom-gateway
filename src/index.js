@@ -12,10 +12,10 @@ if (window.PaymentRequest) {
   //   bindBuyButton()
   // })
 
-  await fetchPaymentSession()
-    createPaymentRequest()
-    renderItems()
-    bindBuyButton()
+    fetchPaymentSession();
+    createPaymentRequest();
+    renderItems();
+    bindBuyButton();
 
   // Get the payment session from Snipcart
   const fetchPaymentSession = async () => {
