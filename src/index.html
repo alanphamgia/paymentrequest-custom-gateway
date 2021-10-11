@@ -12,6 +12,9 @@
 </body>
 
 <script>
+    var paymentSessionId ="";
+    var transactionId ="";
+
     function getData() {
         // var q = window.location.href;
         // let urlSearchParams = new URLSearchParams(window.location.href);
@@ -28,13 +31,12 @@
     }
 
    async function confirm() {
-    event.preventDefault();
     console.log(running);
     const response = await fetch('/.netlify/functions/confirm-payment', {
       method: 'POST',
       body: JSON.stringify({
         paymentSessionId: paymentSessionId,
-        transactionId:  paymentId,
+        transactionId:  transactionId,
         state: paymentState.state,
         error: paymentState.state == 'failed' ? paymentState.error : null
       })
